@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<ImageView  
+	android:id="@+id/staveImg"
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" 
+    android:layout_gravity="center"
+    android:layout_marginTop="0dip"
+    />
+<RelativeLayout
+	android:layout_width="fill_parent" 
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_marginTop="11dip"
+    >
+    <TextView
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="正确"/>
+    <TextView
+    	android:id="@+id/rightNum"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text=" 0   "/>
+    <TextView
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="错误"
+    	/>
+    <TextView
+    	android:id="@+id/wrongNum"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text=" 0   "/>
+    <TextView
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:visibility="gone"
+    	android:text="正确率"/>
+    <TextView
+    	android:id="@+id/accuracy"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:visibility="gone"
+    	android:text=" 0   "/>
+    <TextView
+		android:id="@+id/timer"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="已用时间"/>
+</LinearLayout>
+</RelativeLayout>
+<RelativeLayout
+	android:layout_width="fill_parent" 
+    android:layout_height="wrap_content">
+<RadioGroup
+	android:id="@+id/typeGroup"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_centerInParent="true"
+	android:orientation="horizontal">
+	<RadioButton
+		android:id="@+id/allRadio"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:checked="true"
+		android:text="全部"/>
+	<RadioButton
+		android:id="@+id/highRadio"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="高音"/>
+	<RadioButton
+		android:id="@+id/lowRadio"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="低音"/>
+</RadioGroup>
+</RelativeLayout>
+<RelativeLayout
+	android:layout_width="fill_parent" 
+    android:layout_height="wrap_content">
+	<TableLayout
+		android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+	    android:layout_marginBottom="10dip"
+	    android:layout_alignParentBottom="true" >
+		<TableRow
+			android:gravity="center_horizontal">    
+		    <Button
+				android:id="@+id/b1"
+				android:layout_width="80dip" 
+		    	android:layout_height="60dip"
+		    	android:text="do"/>
+		    <Button
+				android:id="@+id/b2"
+				android:layout_width="80dip" 
+		    	android:layout_height="60dip"
+		    	android:text="re"/>	
+		    <Button
+				android:id="@+id/b3"
+				android:layout_width="80dip" 
+		    	android:layout_height="60dip"
+		    	android:text="mi"/>
+		</TableRow>    	
+		<TableRow
+			android:gravity="center_horizontal">
+			<Button
+				android:id="@+id/b4"
+				android:layout_width="80dip" 
+		    	android:layout_height="60dip"
+		    	android:text="fa"/>
+			<Button
+				android:id="@+id/b5"
+				android:layout_width="80dip" 
+		    	android:layout_height="60dip"
+		    	android:text="sol"/>
+		    <Button
+				android:id="@+id/b6"
+				android:layout_width="80dip" 
+		    	android:layout_height="60dip"
+		    	android:text="la" />
+		    <Button
+				android:id="@+id/b7"
+				android:layout_width="80dip" 
+		    	android:layout_height="60dip"
+		    	android:text="si" /> 
+		</TableRow>
+	</TableLayout>
+</RelativeLayout>
+</LinearLayout>
