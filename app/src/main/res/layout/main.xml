@@ -60,11 +60,14 @@
 <RelativeLayout
 	android:layout_width="fill_parent" 
     android:layout_height="wrap_content">
+<LinearLayout android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+	android:layout_centerInParent="true"
+    android:orientation="horizontal">
 <RadioGroup
 	android:id="@+id/typeGroup"
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
-	android:layout_centerInParent="true"
 	android:orientation="horizontal">
 	<RadioButton
 		android:id="@+id/allRadio"
@@ -83,6 +86,12 @@
 		android:layout_height="wrap_content"
 		android:text="低音"/>
 </RadioGroup>
+<CheckBox android:id="@+id/main_sound"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:checked="true"
+    android:text="音效"/>
+</LinearLayout>
 </RelativeLayout>
 <RelativeLayout
 	android:layout_width="fill_parent" 
@@ -96,41 +105,31 @@
 			android:gravity="center_horizontal">    
 		    <Button
 				android:id="@+id/b1"
-				android:layout_width="80dip" 
-		    	android:layout_height="60dip"
+				style="@style/stave_button"
 		    	android:text="do"/>
 		    <Button
 				android:id="@+id/b2"
-				android:layout_width="80dip" 
-		    	android:layout_height="60dip"
+				style="@style/stave_button"
 		    	android:text="re"/>	
 		    <Button
 				android:id="@+id/b3"
-				android:layout_width="80dip" 
-		    	android:layout_height="60dip"
+				style="@style/stave_button"
 		    	android:text="mi"/>
-		</TableRow>    	
-		<TableRow
-			android:gravity="center_horizontal">
 			<Button
 				android:id="@+id/b4"
-				android:layout_width="80dip" 
-		    	android:layout_height="60dip"
+				style="@style/stave_button"
 		    	android:text="fa"/>
 			<Button
-				android:id="@+id/b5"
-				android:layout_width="80dip" 
-		    	android:layout_height="60dip"
-		    	android:text="sol"/>
+			    android:id="@+id/b5"
+			    style="@style/stave_button"
+			    android:text="so" />
 		    <Button
 				android:id="@+id/b6"
-				android:layout_width="80dip" 
-		    	android:layout_height="60dip"
+				style="@style/stave_button"
 		    	android:text="la" />
 		    <Button
 				android:id="@+id/b7"
-				android:layout_width="80dip" 
-		    	android:layout_height="60dip"
+				style="@style/stave_button"
 		    	android:text="si" /> 
 		</TableRow>
 	</TableLayout>

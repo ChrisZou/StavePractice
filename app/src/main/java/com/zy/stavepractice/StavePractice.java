@@ -1,7 +1,5 @@
 package com.zy.stavepractice;
 
-import java.util.Random;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -18,15 +16,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import java.util.Random;
 
 public class StavePractice extends Activity {
     private ImageView staveImg = null;
     private int imgIndex = 0;
     private boolean highStave = false;
-    private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7;
+	private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7;
     private int rightNum = 0, wrongNum = 0;
     private TextView rightNumView, wrongNumView, timerView;
     private RadioGroup typeGroup;
@@ -48,6 +49,7 @@ public class StavePractice extends Activity {
         rightNumView = (TextView) findViewById(R.id.rightNum);
         wrongNumView = (TextView) findViewById(R.id.wrongNum);
         timerView = (TextView) findViewById(R.id.timer);
+		mSoundBox = (CheckBox) findViewById(R.id.main_sound);
 
         mRunning = true;
 
@@ -121,7 +123,6 @@ public class StavePractice extends Activity {
                 check(7);
             }
         });
-        
         nextImg();
         startTimer();
     }
@@ -136,7 +137,7 @@ public class StavePractice extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == 1) {
             AlertDialog.Builder builder = new Builder(StavePractice.this);
-            builder.setMessage("如果您喜欢这个程序，或者对该程序有任何改进的意见，欢迎联系作者 邹创：zoumengdie@gmail.com, 谢谢！");
+            builder.setMessage("如果您喜欢这个程序，或者对该程序有任何改进的意见，欢迎联系作者 邹小创：happystriving@126.com, 谢谢！");
             builder.setTitle("联系作者");
             builder.setPositiveButton("确认", new OnClickListener() {
                 @Override
@@ -198,9 +199,12 @@ public class StavePractice extends Activity {
         updateStatisticData(); // 更新显示统计数据
     }
 
+	CheckBox mSoundBox;
     private void playVoice() {
-        MediaPlayer mp = MediaPlayer.create(this, getAudioFile());
-        mp.start();
+		if (mSoundBox.isChecked()) {
+			MediaPlayer mp = MediaPlayer.create(this, getAudioFile());
+			mp.start();
+		}
     }
 
     private void notifyWrong() {
@@ -212,10 +216,6 @@ public class StavePractice extends Activity {
     private void updateStatisticData() {
         rightNumView.setText(" " + rightNum + "   ");
         wrongNumView.setText(" " + wrongNum + "   ");
-        /*
-         * accuracyView.setText(" " + (double) rightNum / (rightNum + wrongNum)
-         * 100 + "% ");
-         */
     }
 
     // 随机显示下一张图片
@@ -302,6 +302,7 @@ public class StavePractice extends Activity {
 
     // 根据imgIndex得到下一张图片的Id
     private int getImg(boolean highStave2, int imgIndex2) {
+
         if (highStave2) {
             switch (imgIndex2) {
             case 1:
